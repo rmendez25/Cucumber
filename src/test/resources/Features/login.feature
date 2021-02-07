@@ -10,4 +10,3 @@ Feature: Test Login Functionality
     Examples:
       | username | password |
       | rmendez  | 1234 |
-      | amendez  | 1234 |

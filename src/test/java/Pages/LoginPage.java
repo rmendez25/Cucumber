@@ -1,22 +1,12 @@
 package Pages;
 
+import Utils.BasePage;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage {
-    WebDriver driver;
-    WebDriverWait wait;
-
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-        wait = new WebDriverWait(driver, 15);
-    }
+public class LoginPage extends BasePage {
 
     @FindBy(name = "userName")
     WebElement input_username;
@@ -29,6 +19,10 @@ public class LoginPage {
 
     @FindBy(xpath = "//h3[contains(text(), 'Login Successfully')]")
     WebElement message;
+
+    public LoginPage(WebDriver driver) {
+        super(driver);
+    }
 
     public void enterUsername(String username){
         input_username.sendKeys(username);
@@ -43,7 +37,7 @@ public class LoginPage {
     }
     
     public void validateLogin(){
-        wait.until(ExpectedConditions.visibilityOf(message));
+        waitForElementToAppear(message);
         Assert.assertTrue(message.isDisplayed());
     }
 }
