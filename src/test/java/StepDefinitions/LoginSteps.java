@@ -7,10 +7,11 @@ import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import java.util.concurrent.TimeUnit;
 
 public class LoginSteps {
-    WebDriver driver = null;
+    WebDriver driver;
     LoginPage login;
 
     @Before
