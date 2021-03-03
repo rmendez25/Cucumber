@@ -35,9 +35,8 @@ public class GoogleSearchPage extends BasePage {
         searchButton.submit();
     }
 
-    public void isNavigatedToResultPage(){
-        waitForElementToAppear(cucumberLogo);
-        Assert.assertTrue(cucumberLogo.isDisplayed());
+    public boolean isNavigatedToResultPage(){
+        return cucumberLogo.isDisplayed();
     }
 
 }

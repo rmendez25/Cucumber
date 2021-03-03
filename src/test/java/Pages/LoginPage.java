@@ -36,8 +36,7 @@ public class LoginPage extends BasePage {
         btn_submit.click();
     }
     
-    public void validateLogin(){
-        waitForElementToAppear(message);
-        Assert.assertTrue(message.isDisplayed());
+    public boolean validateLogin(){
+       return message.isDisplayed();
     }
 }

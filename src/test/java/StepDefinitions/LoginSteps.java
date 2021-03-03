@@ -5,6 +5,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -49,6 +50,6 @@ public class LoginSteps {
 
     @Then("user is navigated to the home page")
     public void user_is_navigated_to_the_home_page() {
-        login.validateLogin();
+        Assert.assertTrue(login.validateLogin());
     }
 }
